@@ -1,0 +1,31 @@
+{
+  "name": "bipbip.js",
+  "author": "Baptiste Donaux <baptiste.donaux@gmail.com>",
+  "dependencies": {
+    "commander": "2.9.*"
+  },
+  "bin": {
+    "deploy": "./bin/bipbip"
+  },
+  "version": "0.1.0",
+  "description": "Bipbip is a deploy tool",
+  "main": "./bin/bipbip",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baptistedonaux/bipbip.js.git"
+  },
+  "keywords": [
+    "bipbip",
+    "deploy",
+    "tool"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/baptistedonaux/bipbip.js/issues"
+  },
+  "homepage": "https://github.com/baptistedonaux/bipbip.js#readme"
+}

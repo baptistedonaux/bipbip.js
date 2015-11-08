@@ -1,0 +1,35 @@
+#!/usr/bin/env node
+
+var commander = require("commander"),
+	Bipbip = require('../lib/bipbip.js'),
+	fs = require("fs"),
+
+	envValue
+
+commander
+	.version("0.1.0")
+	.description("Bipbip deploy for you")
+	.usage('[options] <env>')
+	.option('-f, --file <absolute/path/to/config.file.js>', 'Profile file', process.cwd() + "/deploy.js")
+	.on('--help', function() {
+	    console.log('  Examples:');
+	    console.log('');
+	    console.log('    $ deploy dev');
+	    console.log('    $ deploy -f deploy.js dev');
+	    console.log('');
+	})
+	.action(function (env) {
+		envValue = env
+	})
+	.parse(process.argv)
+
+if (fs.existsSync(commander.file) === false) {
+	Bipbip._log(commander.file + ' not found', "red")
+	process.exit(1);
+} else if (envValue === undefined) {
+	Bipbip._log('Please set one environment to use', "red")
+	process.exit(1)
+}
+
+deploy = new Bipbip(commander.file, envValue);
+deploy.run();
