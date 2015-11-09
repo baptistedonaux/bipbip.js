@@ -1,6 +1,8 @@
 Bipbip.js is a simple tool to deploy.
 
 And why bipbip ? Because bipbip...
+
+```
                                          ......,....        
                                       .:$$7777$$Z8,.        
                                    ..$77$$$$$$$77$$..       
@@ -50,3 +52,5 @@ And why bipbip ? Because bipbip...
             ..,,Z$$$Z7..                         ......     
               .,=,,..                                       
                                                             
+                                             GlassGiant.com
+```
