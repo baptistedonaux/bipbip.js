@@ -5,9 +5,9 @@
     "commander": "2.9.*"
   },
   "bin": {
-    "deploy": "./bin/bipbip"
+    "bipbip": "./bin/bipbip"
   },
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Bipbip is a deploy tool",
   "main": "./bin/bipbip",
   "devDependencies": {},
