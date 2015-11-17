@@ -7,7 +7,7 @@ var commander = require("commander"),
 	envValue
 
 commander
-	.version("0.1.3")
+	.version("0.1.4")
 	.description("Bipbip deploy for you")
 	.usage('[options] <env>')
 	.option('-f, --file <absolute/path/to/config.file.js>', 'Profile file', process.cwd() + "/deploy.js")
