@@ -25,7 +25,7 @@ commander
 
 if (fs.existsSync(commander.file) === false) {
 	Bipbip._log(commander.file + ' not found', "red")
-	process.exit(1);
+	process.exit(1)
 } else if (envValue === undefined) {
 	Bipbip._log('Please set one environment to use', "red")
 	process.exit(1)
