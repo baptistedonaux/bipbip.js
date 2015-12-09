@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 var commander = require("commander"),
-	Bipbip = require('../lib/bipbip.js'),
+	Bipbip = require('../lib/index.js'),
 	fs = require("fs"),
 	helper = require("../lib/helper.js"),
 
@@ -32,5 +32,5 @@ if (fs.existsSync(commander.file) === false) {
 	process.exit(1)
 }
 
-deploy = new Bipbip(commander.file, envValue);
-deploy.run();
+var bipbip = new Bipbip(commander.file, envValue);
+bipbip.run();
