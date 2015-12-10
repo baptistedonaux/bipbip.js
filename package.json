@@ -2,7 +2,8 @@
   "name": "bipbip.js",
   "author": "Baptiste Donaux <baptiste.donaux@gmail.com>",
   "dependencies": {
-    "commander": "2.9.*"
+    "commander": "2.9.*",
+    "ejs": "2.3.*"
   },
   "bin": {
     "bipbip": "./bin/bipbip"
