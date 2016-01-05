@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 
-var commander = require("commander"),
-	Bipbip = require('../lib/index.js'),
+var Bipbip = require('../lib/index.js'),
+	commander = require("commander"),
 	fs = require("fs"),
 	helper = require("../lib/helper.js"),
 
 	envValue;
 
 commander
-	.version("0.1.4")
+	.version("0.2.0")
 	.description("Bipbip deploy for you")
 	.usage('[options] <env>')
 	.option('-f, --file <absolute/path/to/config.file.js>', 'Profile file', process.cwd() + "/deploy.js")
