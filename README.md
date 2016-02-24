@@ -1,56 +1,129 @@
-Bipbip.js is a simple tool to deploy.
+Bipbip.js is a simple tool to deploy, based on Node.js.
 
-And why bipbip ? Because bipbip...
+![Bipbip.js](logo.gif)
 
+# Installation
+
+```bash
+$ npm install -g bipbip.js
 ```
-                                         ......,....        
-                                      .:$$7777$$Z8,.        
-                                   ..$77$$$$$$$77$$..       
-                                 ..$77$$ZZ$ZZ$$8Z$7$$..     
-                          ...  ..:7$$ZOZ$DO$$OZ$8DO$7$..    
-                         ..77..,I$ZOO8$,Z7,8$8DO$.,OZ$$.    
-                       ..,.77$OZ$.....,.. .=Z.:8Z...:8Z.    
-                 ..,. .......7Z$O.         .  ,8I. . ...    
-                ..?~..,~7...777$Z.                          
-                 ,I====+.ZIZ?~=?Z.                          
-                .,7$====~=ZZ+I==~,                          
-                  ..,=~~~=+?++++?+.                         
-                  ...,~?+ZZII77I?+                          
-        .....          .:7II,.~I+==..                       
-      ..=====...       .:?=.  .,?+=:.                       
-   .....,:?=~=++.       ..     ..:+~~.                      
- .,===~~=~==I=~~+=.             ..:+~=..                    
- .,~?7I?+===~~~~~=+,.             .,+~=..                   
-    ...,?$I++==~~~~=?..            .,~=~,.                  
-   ..=+===~~=?===~===I..             .~=~= .                
- ..===+++++===========?.              .:+~=:...             
- ,+?I7:,,,:??+++=======?..             .,I~~=~~Z$7I==~=I ...
-.:7... ..~=~~====+=====+?               .,+=~===+I77$$$$Z$..
-        ,:::::+I?+++====+..              .?+=======+77$$.,, 
-            ..:+==I+++===+..           ...Z$Z$=~~~=+ZZZ$..  
-             .?++?I++++===+..         ..$$Z$$Z====++$7$$7.. 
-            ,++???????++++=+,.      ..I$$$Z$$$I+++?IO$O8:.. 
-            .......,++???++++?... ..,O777$$$$$Z$$?+,:~+,..  
-                  .....~+++++==+==++7O7$$ZOOZ777Z..   .     
-                      ...=+??????I?O7O$$ZZ$ZO7$Z..          
-                       ..,.,I......,?:O7ZO77$OZ.            
-                           ..       ..IZ?IIZ77..            
-                                      ,?II777.              
-                                     .77I$8~..              
-                                   ..:ZOO8...               
-                                  ..,ZOD8..                 
-                                  .,ZODO..                  
-                                 .,Z~.O?..                  
-                                .:Z..8Z..                   
-                               .+$I.:Z$.                    
-                             ..$$O..OZ$..                   
-                           ..?7ZZ88OZ$$$..                  
-                         ..$7$ZZ$7$ZDZ$77$$=:::=?Z?,.       
-                ..??7$ZZ$$7$Z8=,,$$77.,?O$7$$ZZOZZZ777.     
-             ..777ZOZ$ZZ$Z$..    ..,..  ..,~OZ$7777$$OM.    
-            ..?ZO$$$$$$Z:.                  ..,,IZZZ$$      
-            ..,,Z$$$Z7..                         ......     
-              .,=,,..                                       
-                                                            
-                                             GlassGiant.com
+
+# Run a deployment
+
+```bash
+$ bipbip my_env
+
+# Run prod env
+$ bipbip prod
 ```
+
+# Configuration
+
+bipbip.js takes the ```deploy.js``` default file. The file takes a default configuration and supports environments.
+
+The environment called is merged with ```default``` environment.
+
+```javascript
+exports.config = {
+  default: {
+  },
+  dev: {
+  },
+  preprod: {
+  },
+  prod: {
+  },
+  other_env: {
+  }
+}
+```
+
+## Environment variable
+
+```javascript
+workspace: "/path/to/workspace",
+server: {
+  user: "user",
+  host: "server_to_deploy.io",
+  to: "/path/to/deploy"
+},
+repository: {
+  url: "git@github.com:baptistedonaux/bipbip.js.git",
+
+  // branch and tag should not be sets simultaneously
+  branch: null,
+  tag: null,
+  
+  options: {
+    // clone submodule
+    submodules: true|false
+  }
+},
+commands:  {
+  local: [
+    // command to run locally
+  ],
+  remote: [
+    // command to run after project send to remote server
+  ],
+  postDeploy: [
+    // command to run after new release deployed
+  ]
+},
+ignores: [
+  // ignore files and folders to send
+],
+shared: {
+  files: [
+    // files list shared
+  ],
+  folders: [
+    // folders list shared
+  ]
+},
+releases: 3
+```
+
+## Required values
+
+```javascript
+{
+  workspace: "Folder to build project before deploy on remote server",
+  server: {
+    user: "User to connect the remote server",
+    host: "Server to deploy",
+    to: "Absolute path where deploy"
+  },
+  repository: {
+    url: "Source Git repository"
+  }
+```
+
+## Default values
+
+```javascript
+{
+  repository: {
+    branch: null,
+    tag: null,
+    options: {
+      submodules: false
+    }
+  },
+  commands:  {
+    local: [],
+    remote: [],
+    postDeploy: []
+  },
+  ignores: [],
+  shared: {
+    files: [],
+    folders: []
+  },
+  releases: 3
+}
+```
+
+# Contributed
+
+```bipbip.js``` is a simple project. No specific or complexe features will are developped. For bugs and features, open an [issue](https://github.com/baptistedonaux/bipbip.js/issues).
