@@ -1,3 +1,9 @@
+## 0.3
+
+> * Simplified proccess to remove old releases
+> * Remove async command to run multiple commands in same time (experimental)
+> * Clear require
+
 ## 0.2
 
 > * Add check configuration
