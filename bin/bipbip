@@ -8,7 +8,7 @@ var Bipbip = require('../lib/index.js'),
 	envValue;
 
 commander
-	.version("0.2.0")
+	.version("0.2.1")
 	.description("Bipbip deploy for you")
 	.usage('[options] <env>')
 	.option('-f, --file <absolute/path/to/config.file.js>', 'Profile file', process.cwd() + "/deploy.js")
