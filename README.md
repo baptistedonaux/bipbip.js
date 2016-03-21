@@ -88,7 +88,6 @@ releases: 3
 
 ```javascript
 {
-  workspace: "Folder to build project before deploy on remote server",
   server: {
     user: "User to connect the remote server",
     host: "Server to deploy",
@@ -101,6 +100,7 @@ releases: 3
 
 ```javascript
 {
+  workspace: require("process").cwd(),
   repository: {
     branch: null,
     options: {
