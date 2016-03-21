@@ -1,3 +1,7 @@
+## 0.4
+
+> * Possibility to not clone repository and execute commands in current folder (same folder that bipbip configuration)
+
 ## 0.3
 
 > * Simplified proccess to remove old releases
