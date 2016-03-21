@@ -1,6 +1,6 @@
 ## 0.4
 
-> * Possibility to not clone repository and execute commands in current folder (same folder that bipbip configuration)
+> * Add possibility do not clone repository and execute immediatly commands in current folder (same folder that bipbip configuration)
 
 ## 0.3
 

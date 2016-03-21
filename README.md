@@ -93,10 +93,8 @@ releases: 3
     user: "User to connect the remote server",
     host: "Server to deploy",
     to: "Absolute path where deploy"
-  },
-  repository: {
-    url: "Source Git repository"
   }
+}
 ```
 
 ## Default values
@@ -105,10 +103,11 @@ releases: 3
 {
   repository: {
     branch: null,
-    tag: null,
     options: {
       submodules: false
-    }
+    },
+    tag: null,
+    url: null
   },
   commands:  {
     local: [],
