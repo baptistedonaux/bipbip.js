@@ -123,6 +123,6 @@ releases: 3
 }
 ```
 
-# Contributed
+# Contribute
 
 ```bipbip.js``` is a simple project. No specific or complexe features will are developped. For bugs and features, open an [issue](https://github.com/baptistedonaux/bipbip.js/issues).
