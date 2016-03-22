@@ -1,24 +1,27 @@
+# Bipbip.js - Simple deployment tool
+
+[![Build Status](https://travis-ci.org/baptistedonaux/bipbip.js.svg?branch=0.4)](https://travis-ci.org/baptistedonaux/bipbip.js)
+[![DUB](https://img.shields.io/dub/l/vibe-d.svg)](LICENSE)
+
 Bipbip.js is a simple tool to deploy, based on Node.js.
 
 ![Bipbip.js](logo.gif)
 
-# Installation
+## Installation
 
 ```bash
 $ npm install -g bipbip.js
 ```
-
-# Run a deployment
-
+## Getting Started
+### Run a deployment
 ```bash
-$ bipbip my_env
+$ bipbip <env>
 
 # Run prod env
 $ bipbip prod
 ```
 
-# Configuration
-
+### Configuration
 bipbip.js takes the ```deploy.js``` default file. The file takes a default configuration and supports environments.
 
 The environment called is merged with ```default``` environment.
@@ -27,19 +30,14 @@ The environment called is merged with ```default``` environment.
 exports.config = {
   default: {
   },
-  dev: {
+  <env1>: {
   },
-  preprod: {
-  },
-  prod: {
-  },
-  other_env: {
+  <env2>: {
   }
 }
 ```
 
-## Environment variable
-
+### Environment variables
 ```javascript
 workspace: "/path/to/workspace",
 server: {
@@ -61,31 +59,30 @@ repository: {
 },
 commands:  {
   local: [
-    // command to run locally
+    // local commands to run (before send to remote server)
   ],
   remote: [
-    // command to run after project send to remote server
+    // remote commands to run (after project send to remote server)
   ],
   postDeploy: [
-    // command to run after new release deployed
+    // remote commands to run (after new release deployed)
   ]
 },
 ignores: [
-  // ignore files and folders to send
+  // ignore files/folders
 ],
 shared: {
   files: [
-    // files list shared
+    // files shared
   ],
   folders: [
-    // folders list shared
+    // folders shared
   ]
 },
 releases: 3
 ```
 
-## Required values
-
+#### Required values
 ```javascript
 {
   server: {
@@ -96,8 +93,7 @@ releases: 3
 }
 ```
 
-## Default values
-
+#### Default values
 ```javascript
 {
   workspace: require("process").cwd(),
@@ -123,6 +119,10 @@ releases: 3
 }
 ```
 
-# Contributed
+## Test
+```bash
+$ npm test
+```
 
+## Contribute
 ```bipbip.js``` is a simple project. No specific or complexe features will are developped. For bugs and features, open an [issue](https://github.com/baptistedonaux/bipbip.js/issues).
