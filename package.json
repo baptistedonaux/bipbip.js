@@ -6,6 +6,7 @@
   },
   "devDependencies": {
     "expect.js": "^0.3.1",
+    "jshint": "^2.9.1",
     "mocha": "^2.4.5"
   },
   "bin": {
@@ -15,7 +16,7 @@
   "description": "Bipbip is a deploy tool",
   "main": "./bin/bipbip",
   "scripts": {
-    "test": "mocha"
+    "test": "jshint bin lib && mocha"
   },
   "repository": {
     "type": "git",

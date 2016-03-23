@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 
-var Bipbip = require('../lib/index.js'),
+"use strict";
+
+let Bipbip = require('../lib/index.js'),
 	commander = require("commander"),
 	fs = require("fs"),
 	helper = require("../lib/helper.js"),
@@ -20,17 +22,17 @@ commander
 	    console.log('');
 	})
 	.action(function (env) {
-		envValue = env
+		envValue = env;
 	})
-	.parse(process.argv)
+	.parse(process.argv);
 
 if (fs.existsSync(commander.file) === false) {
-	helper.log(commander.file + ' not found', "red")
-	process.exit(1)
+	helper.log(commander.file + ' not found', "red");
+	process.exit(1);
 } else if (envValue === undefined) {
-	helper.log('Please set one environment to use', "red")
-	process.exit(1)
+	helper.log('Please set one environment to use', "red");
+	process.exit(1);
 }
 
-var bipbip = new Bipbip(commander.file, envValue);
+let bipbip = new Bipbip(commander.file, envValue);
 bipbip.run();
