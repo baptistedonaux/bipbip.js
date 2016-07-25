@@ -6,11 +6,21 @@ let Bipbip = require('../lib/index.js'),
 	commander = require("commander"),
 	fs = require("fs"),
 	helper = require("../lib/helper.js"),
+	path = require("path"),
 
+	pkg,
 	envValue;
 
+try {
+	pkg = fs.readFileSync(path.dirname(process.argv[1]) + "/../package.json");
+	pkg = JSON.parse(pkg);
+} catch (err) {
+	helper.log(err.message, "red");
+	process.exit(1);
+}
+
 commander
-	.version("0.4.1")
+	.version(pkg.version)
 	.description("Bipbip deploy for you")
 	.usage('[options] <env>')
 	.option('-f, --file <absolute/path/to/config.file.js>', 'Profile file', process.cwd() + "/deploy.js")
