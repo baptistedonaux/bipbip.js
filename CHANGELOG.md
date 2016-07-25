@@ -1,3 +1,8 @@
+## 0.5
+
+> * Deployment multi-server
+> * Add Travis test
+
 ## 0.4
 
 > * Add possibility do not clone repository and execute immediatly commands in current folder (same folder that bipbip configuration)
