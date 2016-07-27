@@ -1,6 +1,6 @@
 # Bipbip.js - Simple deployment tool
 
-[![Build Status](https://travis-ci.org/baptistedonaux/bipbip.js.svg?branch=0.4)](https://travis-ci.org/baptistedonaux/bipbip.js)
+[![Build Status](https://travis-ci.org/baptistedonaux/bipbip.js.svg?branch=0.5)](https://travis-ci.org/baptistedonaux/bipbip.js)
 [![DUB](https://img.shields.io/dub/l/vibe-d.svg)](LICENSE)
 
 Bipbip.js is a simple tool to deploy, based on Node.js.
@@ -40,11 +40,11 @@ exports.config = {
 ### Environment variables
 ```javascript
 workspace: "/path/to/workspace",
-server: {
+servers: [{
   user: "user",
   host: "server_to_deploy.io",
   to: "/path/to/deploy"
-},
+}],
 repository: {
   url: "git@github.com:baptistedonaux/bipbip.js.git",
 
@@ -85,11 +85,11 @@ releases: 3
 #### Required values
 ```javascript
 {
-  server: {
+  servers: [{
     user: "User to connect the remote server",
     host: "Server to deploy",
     to: "Absolute path where deploy"
-  }
+  }]
 }
 ```
 
