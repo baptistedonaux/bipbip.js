@@ -2,7 +2,8 @@
   "name": "bipbip.js",
   "author": "Baptiste Donaux <baptiste.donaux@gmail.com>",
   "dependencies": {
-    "commander": "2.9.*"
+    "commander": "2.9.*",
+    "moment": "^2.14.1"
   },
   "devDependencies": {
     "expect.js": "^0.3.1",
