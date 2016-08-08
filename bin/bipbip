@@ -42,4 +42,4 @@ if (fs.existsSync(commander.file) === false) {
 	process.exit(1);
 }
 
-new Bipbip(commander.file, envValue);
+Bipbip(commander.file, envValue);
