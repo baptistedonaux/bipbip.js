@@ -42,5 +42,4 @@ if (fs.existsSync(commander.file) === false) {
 	process.exit(1);
 }
 
-let bipbip = new Bipbip(commander.file, envValue);
-bipbip.run();
+new Bipbip(commander.file, envValue);
