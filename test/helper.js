@@ -18,7 +18,7 @@ describe('Helper', function() {
 
 	describe('mkdir()', function () {
 		it('returns the right command', function () {
-			expect(helper.mkdir("/create_folder")).to.equal("[ -d /create_folder ] || mkdir -p /create_folder");
+			expect(helper.mkdir("/create_folder", "/create_folder_2")).to.equal("mkdir -p /create_folder /create_folder_2");
 		});
 	});
 
