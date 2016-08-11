@@ -42,4 +42,10 @@ if (fs.existsSync(commander.file) === false) {
 	process.exit(1);
 }
 
-Bipbip(commander.file, envValue);
+Bipbip(commander.file, envValue)
+	.on("data", (chunk) => {
+		console.log(chunk);
+	})
+	.on("error", (error) => {
+		console.error(error);
+	});
