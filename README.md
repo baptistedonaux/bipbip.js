@@ -1,6 +1,6 @@
 # Bipbip.js - Simple deployment tool
 
-[![Build Status](https://travis-ci.org/baptistedonaux/bipbip.js.svg?branch=0.5)](https://travis-ci.org/baptistedonaux/bipbip.js)
+[![Build Status](https://travis-ci.org/baptistedonaux/bipbip.js.svg?branch=0.6)](https://travis-ci.org/baptistedonaux/bipbip.js)
 [![DUB](https://img.shields.io/dub/l/vibe-d.svg)](LICENSE)
 
 Bipbip.js is a simple tool to deploy, based on Node.js.
