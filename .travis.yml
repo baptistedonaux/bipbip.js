@@ -1,8 +1,24 @@
 language: node_js
+
 node_js:
   - "4"
   - "6"
+
+sudo: true
+
+before_install:
+  - sudo apt-get update
+  - sudo apt-get install -y openssh-server
+  - sudo useradd --create-home test
+  - sudo passwd test <<< "$(echo -en "test\ntest\n")"
+  - echo "AllowUsers test" | sudo tee /etc/ssh/sshd_config
+  - sudo service ssh reload
+  - ssh-keygen -f ~/.ssh/id_rsa -N ""
+  - sudo -u test mkdir ~test/.ssh
+  - cat ~/.ssh/id_rsa.pub | sudo tee ~test/.ssh/authorized_keys
+
 install:
   - npm install
+
 script:
   - npm test
