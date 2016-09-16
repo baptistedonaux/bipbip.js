@@ -1,2 +1,3 @@
-node_modules
 /deploy.js
+docker-compose.yml
+node_modules

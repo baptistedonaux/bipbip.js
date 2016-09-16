@@ -1,0 +1,7 @@
+version: "2"
+
+services:
+  bipbip:
+    build: ./docker/test
+    volumes:
+      - ".:/data"
