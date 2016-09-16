@@ -1,3 +1,13 @@
+## 0.6
+
+0.6 has the same comportement of 0.5 release but improve speed and architecture.
+
+> * Deployment steps are executed in parallel on servers to improve speed (Promise)
+> * Add Docker environment to execute test
+> * Add Travis test to check commands executed
+> * Bipbip core refacto to be run without command (uses it for mocha test)
+> * Callback system implemented to retrieve log
+
 ## 0.5
 
 > * Deployment multi-server
