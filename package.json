@@ -13,7 +13,7 @@
   "bin": {
     "bipbip": "./bin/bipbip"
   },
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "Bipbip is a deploy tool",
   "main": "./bin/bipbip",
   "scripts": {
