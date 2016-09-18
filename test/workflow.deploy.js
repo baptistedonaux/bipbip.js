@@ -1,3 +1,5 @@
+const package = require("../package.json");
+
 exports.config = {
 	default: {
 		commands:  {
@@ -39,7 +41,7 @@ exports.config = {
 		}],
 		repository: {
 			url: "https://github.com/baptistedonaux/bipbip.js.git",
-			branch: "master"
+			branch: package.version
 		}
 	}
 };
