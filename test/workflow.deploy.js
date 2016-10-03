@@ -41,7 +41,7 @@ exports.config = {
 		}],
 		repository: {
 			url: "https://github.com/baptistedonaux/bipbip.js.git",
-			tag: package.version
+			tag: `v${package.version}`
 		}
 	}
 };
