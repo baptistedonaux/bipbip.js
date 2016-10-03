@@ -2,7 +2,8 @@
 
 const expect = require("expect.js"),
 	Bipbip = require('../lib/index.js'),
-    logger = require("../lib/logger.js");
+    logger = require("../lib/logger.js"),
+    pkg = require("../package.json");
 
 describe("Workflow", function() {
     describe("Without repository", function() {
@@ -59,7 +60,7 @@ describe("Workflow", function() {
                         expect(log).to.match(/which git/);
                         expect(log).to.match(/which rsync/);
                         expect(log).to.match(/date \+\"%Y%d%m%H%M%S\"/);
-                        expect(log).to.match(/git clone -b master https:\/\/github.com\/baptistedonaux\/bipbip.js.git --depth=1 \/tmp\/repository/);
+                        expect(log).to.match(new RegExp(`git clone -b v${pkg.version} https:\/\/github.com\/baptistedonaux\/bipbip.js.git --depth=1 \/tmp\/repository`));
                         expect(log).to.match(/echo 'Local command'/);
                         expect(log).to.match(/ls -1t \/home\/test\/repository\/releases | head -n 1/);
                         expect(log).to.match(/mkdir -p \/home\/test\/repository\/releases \/home\/test\/repository\/shared/);
@@ -99,7 +100,7 @@ describe("Workflow", function() {
                         expect(log).to.match(/date \+\"%Y%d%m%H%M%S\"/);
                         expect(log).to.match(/git rev-parse --git-dir/);
                         expect(log).to.match(/git reset --hard && git fetch --all && git fetch --tags/);
-                        expect(log).to.match(/git remote set-branches --add origin master/);
+                        expect(log).to.match(new RegExp(`git checkout -q refs/tags/v${pkg.version}`));
                         expect(log).to.match(/echo 'Local command'/);
                         expect(log).to.match(/ls -1t \/home\/test\/repository\/releases \| head -n 1/);
                         expect(log).to.match(/mkdir -p \/home\/test\/repository\/releases \/home\/test\/repository\/shared/);
