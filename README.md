@@ -40,6 +40,10 @@ exports.config = {
 ### Environment variables
 ```javascript
 workspace: "/path/to/workspace",
+requirements: {
+    local: [],
+    remote: []
+},
 servers: [{
   user: "user",
   host: "server_to_deploy.io",
@@ -97,6 +101,10 @@ releases: 3
 ```javascript
 {
   workspace: require("process").cwd(),
+  requirements: {
+    local: [],
+    remote: []
+  },
   repository: {
     branch: null,
     options: {
