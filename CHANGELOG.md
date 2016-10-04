@@ -1,3 +1,10 @@
+## 0.7
+
+> * Runs many local commands in parallel
+> * Add entry to check few requirements on local and remote hosts
+> * ESLint validation
+> * Minify package generated
+
 ## 0.6
 
 0.6 has the same comportement of 0.5 release but improve speed and architecture.
