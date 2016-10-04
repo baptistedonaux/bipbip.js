@@ -1,37 +1,37 @@
 {
   "name": "bipbip.js",
+  "description": "Bipbip is a deploy tool",
+  "version": "0.7.0",
   "author": "Baptiste Donaux <baptiste.donaux@gmail.com>",
-  "dependencies": {
-    "commander": "2.9.*",
-    "moment": "^2.14.1"
-  },
-  "devDependencies": {
-    "eslint": "^3.5.0",
-    "expect.js": "^0.3.1",
-    "jshint": "^2.9.1",
-    "mocha": "^3.0.2"
-  },
+  "license": "MIT",
+  "main": "./lib/index.js",
   "bin": {
     "bipbip": "./bin/bipbip"
-  },
-  "version": "0.6.1",
-  "description": "Bipbip is a deploy tool",
-  "main": "./bin/bipbip",
-  "scripts": {
-    "test": "jshint bin lib && eslint lib && mocha --timeout=60000"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/baptistedonaux/bipbip.js.git"
+  },
+  "dependencies": {
+    "commander": "2.9.*",
+    "moment": "^2.15.1"
+  },
+  "devDependencies": {
+    "eslint": "^3.7.1",
+    "expect.js": "^0.3.1",
+    "jshint": "^2.9.3",
+    "mocha": "^3.1.0"
+  },
+  "scripts": {
+    "test": "jshint bin lib && eslint lib && mocha --timeout=60000"
   },
   "keywords": [
     "bipbip",
     "deploy",
     "tool"
   ],
-  "license": "MIT",
+  "homepage": "https://github.com/baptistedonaux/bipbip.js#readme",
   "bugs": {
     "url": "https://github.com/baptistedonaux/bipbip.js/issues"
-  },
-  "homepage": "https://github.com/baptistedonaux/bipbip.js#readme"
+  }
 }

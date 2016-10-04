@@ -1,0 +1,10 @@
+*.tgz
+.eslintrc.json
+.jshintrc
+.travis.yml
+deploy.js
+docker
+docker-compose.yml
+docker-compose.yml.dist
+logo.gif
+test
