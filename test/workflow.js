@@ -20,6 +20,8 @@ describe("Workflow", function() {
                     try {
                         expect(log).to.match(/which git/);
                         expect(log).to.match(/which rsync/);
+                        expect(log).to.match(/which ssh/);
+                        expect(log).to.match(/ssh -o StrictHostKeyChecking=no test@localhost \'which rsync || exit 1\'/);
                         expect(log).to.match(/date \+\"%Y%d%m%H%M%S\"/);
                         expect(log).to.match(/echo 'Local command'/);
                         expect(log).to.match(/ls -1t .*\/releases | head -n 1/);
@@ -59,6 +61,8 @@ describe("Workflow", function() {
                     try {
                         expect(log).to.match(/which git/);
                         expect(log).to.match(/which rsync/);
+                        expect(log).to.match(/which ssh/);
+                        expect(log).to.match(/ssh -o StrictHostKeyChecking=no test@localhost \'which rsync || exit 1\'/);
                         expect(log).to.match(/date \+\"%Y%d%m%H%M%S\"/);
                         expect(log).to.match(new RegExp(`git clone -b v${pkg.version} https:\/\/github.com\/baptistedonaux\/bipbip.js.git --depth=1 \/tmp\/repository`));
                         expect(log).to.match(/echo 'Local command'/);
