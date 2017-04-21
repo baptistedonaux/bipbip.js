@@ -3,8 +3,8 @@
 "use strict";
 
 let Bipbip = require('../lib/index.js'),
-	commander = require("commander"),
-	fs = require("fs"),
+    commander = require("commander"),
+    fs = require("fs"),
     writter = new (require("../lib/logger.js"))({
         data: (chunk) => {
             console.log(chunk);
@@ -13,13 +13,17 @@ let Bipbip = require('../lib/index.js'),
             console.error(`\x1B[31m> ${error}\x1B[39m`);
         }
     }),
+    message = require("../lib/logger.js").buildMessage,
 	pkg,
 	envValue;
 
 try {
 	pkg = require('../package.json');
 } catch (err) {
-	writter.write(err.message, "red");
+	message(writter.write, [{
+        "message": err.message,
+        "color": "red"
+    }]);
 	process.exit(1);
 }
 
@@ -41,10 +45,16 @@ commander
 	.parse(process.argv);
 
 if (fs.existsSync(commander.file) === false) {
-	writter.write(commander.file + ' not found', "red");
+	message(writter.write, [{
+        "message": commander.file + ' not found',
+        "color": "red"
+    }]);
 	process.exit(1);
 } else if (envValue === undefined) {
-	writter.write('Please set one environment to use', "red");
+	message(writter.write, [{
+        "message": 'Please set one environment to use',
+        "color": "red"
+    }]);
 	process.exit(1);
 }
 
