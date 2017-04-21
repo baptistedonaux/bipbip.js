@@ -4,7 +4,7 @@
 	"esversion": 6,
 	"freeze": true,
 	"maxerr": 0,
-	"maxparams": 4,
+	"maxparams": 5,
 	"node": true,
 	"strict": true,
 	"undef": true,
