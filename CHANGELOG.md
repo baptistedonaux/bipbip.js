@@ -1,3 +1,8 @@
+## 0.8
+
+> * Add checks on local and remote servers and test if remote connections can be established
+> * Add new option on rsync command to remove of remote destination, recently files excluded. Works too on dependencies removed.
+
 ## 0.7
 
 > * Runs many local commands in parallel
