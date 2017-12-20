@@ -1,3 +1,7 @@
+## 0.9
+
+> * Allow custom port connection
+
 ## 0.8
 
 > * Add checks on local and remote servers and test if remote connections can be established

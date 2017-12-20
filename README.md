@@ -5,12 +5,12 @@
 
 Bipbip.js is a simple tool to deploy, based on Node.js.
 
-![Bipbip.js](logo.gif)
+![Bipbip.js](bipbip-logo-text.svg)
 
 ## Installation
 
 ```bash
-$ npm install -g bipbip.js@0.8.*
+$ npm install -g bipbip.js@0.9.*
 ```
 ## Getting Started
 ### Run a deployment
