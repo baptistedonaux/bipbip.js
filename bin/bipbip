@@ -20,7 +20,7 @@ let Bipbip = require('../lib/index.js'),
 try {
 	pkg = require('../package.json');
 } catch (err) {
-	message(writter.write, [{
+	message(writter.getWritter(), [{
         "message": err.message,
         "color": "red"
     }]);
@@ -45,13 +45,13 @@ commander
 	.parse(process.argv);
 
 if (fs.existsSync(commander.file) === false) {
-	message(writter.write, [{
+	message(writter.getWritter(), [{
         "message": commander.file + ' not found',
         "color": "red"
     }]);
 	process.exit(1);
 } else if (envValue === undefined) {
-	message(writter.write, [{
+	message(writter.getWritter(), [{
         "message": 'Please set one environment to use',
         "color": "red"
     }]);
