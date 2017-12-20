@@ -29,7 +29,8 @@ exports.config = {
 		servers: [{
 			user: "test",
 			host: "localhost",
-			to: "/home/test/noRepository"
+			to: "/home/test/noRepository",
+            // port: 22
 		}],
 	},
 	repository: {
