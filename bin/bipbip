@@ -10,10 +10,12 @@ let Bipbip = require('../lib/index.js'),
             console.log(chunk);
         },
         error: (error) => {
-            message(writter.getWritter(), [{
-                "color": "red",
-                "message": error
-            }]);
+            if (error !== undefined) {
+                message(writter.getWritter(), [{
+                    "color": "red",
+                    "message": error
+                }]);
+            }
         }
     }),
     message = require("../lib/logger.js").buildMessage,
