@@ -47,7 +47,8 @@ requirements: {
 servers: [{
   user: "user",
   host: "server_to_deploy.io",
-  to: "/path/to/deploy"
+  to: "/path/to/deploy",
+  port: 22
 }],
 repository: {
   url: "git@github.com:baptistedonaux/bipbip.js.git",
@@ -105,6 +106,9 @@ releases: 3
     local: [],
     remote: []
   },
+  servers: [{
+    port: 22
+  }],
   repository: {
     branch: null,
     options: {
