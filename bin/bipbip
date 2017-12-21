@@ -12,7 +12,7 @@ let Bipbip = require('../lib/index.js'),
         },
         error: (error) => {
             if (error !== undefined) {
-                writter.getWritter(chalk.red(error));
+                writter.getWritter()(chalk.red(error));
             }
         }
     }),

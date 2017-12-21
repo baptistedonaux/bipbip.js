@@ -14,8 +14,7 @@
   },
   "dependencies": {
     "chalk": "2.3.*",
-    "commander": "2.12.*",
-    "moment": "2.20.*"
+    "commander": "2.12.*"
   },
   "devDependencies": {
     "eslint": "4.13.*",
