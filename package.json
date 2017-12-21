@@ -13,6 +13,7 @@
     "url": "git+https://github.com/baptistedonaux/bipbip.js.git"
   },
   "dependencies": {
+    "chalk": "2.3.*",
     "commander": "2.12.*",
     "moment": "2.20.*"
   },
