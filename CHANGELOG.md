@@ -1,3 +1,7 @@
+## 0.10
+
+> * Re-build log system and simplify message displayed
+
 ## 0.9
 
 > * Allow custom port connection
