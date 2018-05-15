@@ -1,7 +1,7 @@
 {
   "name": "bipbip.js",
   "description": "Bipbip is a deploy tool",
-  "version": "0.10.11",
+  "version": "0.10.12",
   "author": "Baptiste Donaux <baptiste.donaux@gmail.com>",
   "license": "MIT",
   "main": "./lib/index.js",
