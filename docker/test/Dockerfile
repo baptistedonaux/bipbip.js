@@ -1,12 +1,12 @@
-FROM node:4
+FROM node:20
 
 RUN ssh-keygen -t rsa -C bipbip@baptiste-donaux.fr -f /root/.ssh/id_rsa
 
 RUN apt-get update \
 	&& apt-get install -y \
 		openssh-server \
-		php5-cli \
-		php5-curl \
+		php8.2-cli \
+		php8.2-curl \
 		rsync \
 		sudo \
 	&& useradd --create-home test \
