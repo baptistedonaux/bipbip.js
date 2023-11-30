@@ -1,3 +1,7 @@
+## 0.11
+
+> * Add `releaseDir` option to define a sub-folder to deploy. Option can be used to deploy `dist` folder, for example
+
 ## 0.10
 
 > * Re-build log system and simplify message displayed
