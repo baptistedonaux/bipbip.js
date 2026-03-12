@@ -1,3 +1,7 @@
+## 0.12
+
+> * If no configuration file is provided to cli, `deploy.cjs` is also tested (in addition to `deploy.js`)
+
 ## 0.11
 
 > * Add `releaseDir` option to define a sub-folder to deploy. Option can be used to deploy `dist` folder, for example
