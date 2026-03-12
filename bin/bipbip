@@ -1,54 +1,70 @@
 #!/usr/bin/env node
 
-"use strict";
+'use strict'
 
-let Bipbip = require('../lib/index.js'),
-    chalk = require("chalk"),
-    commander = require("commander"),
-    fs = require("fs"),
-    writter = new (require("../lib/logger.js"))({
-        data: (chunk) => {
-            console.log(chunk);
-        },
-        error: (error) => {
-            if (error !== undefined) {
-                writter.getWritter()(chalk.red(error));
-            }
-        }
-    }),
-	pkg,
-	envValue;
+const Bipbip = require('../lib/index.js')
+const chalk = require('chalk')
+const commander = require('commander')
+const fs = require('fs')
+const writter = new (require('../lib/logger.js'))({
+  data: (chunk) => {
+    console.log(chunk)
+  },
+  error: (error) => {
+    if (error !== undefined) {
+      writter.getWritter()(chalk.red(error))
+    }
+  }
+})
+let pkg
+let envValue
 
 try {
-	pkg = require('../package.json');
+  pkg = require('../package.json')
 } catch (err) {
-	writter.getWritter()(chalk.red(err.message));
-	process.exit(1);
+  writter.getWritter()(chalk.red(err.message))
+  process.exit(1)
 }
 
 commander
-	.version(pkg.version)
-	.description("Bipbip deploy for you")
-	.usage('[options] <env>')
-	.option('-f, --file <absolute/path/to/config.file.js>', 'Profile file', process.cwd() + "/deploy.js")
-	.on('--help', function() {
-	    console.log('  Examples:');
-	    console.log('');
-	    console.log('    $ bipbip dev');
-	    console.log('    $ bipbip -f deploy.js dev');
-	    console.log('');
-	})
-	.action(function (env) {
-		envValue = env;
-	})
-	.parse(process.argv);
+  .version(pkg.version)
+  .description('Bipbip deploy for you')
+  .usage('[options] <env>')
+  .option('-f, --file <absolute/path/to/config.file.js>', 'Profile file')
+  .on('--help', function () {
+	    console.log('  Examples:')
+	    console.log('')
+	    console.log('    $ bipbip dev')
+	    console.log('    $ bipbip -f deploy.js dev')
+	    console.log('')
+  })
+  .action(function (env) {
+    envValue = env
+  })
+  .parse(process.argv)
 
-if (fs.existsSync(commander.file) === false) {
-	writter.getWritter()(chalk.red(commander.file + ' not found'));
-	process.exit(1);
-} else if (envValue === undefined) {
-	writter.getWritter()(chalk.red('Please set one environment to use'));
-	process.exit(1);
+if (!commander.file) {
+  commander.file = [
+  	process.cwd() + '/deploy.js',
+  	process.cwd() + '/deploy.cjs'
+  ]
+} else {
+  commander.file = [commander.file]
 }
 
-Bipbip(commander.file, envValue, writter);
+for (let i = 0; i < commander.file.length; i++) {
+  const file = commander.file[i]
+
+  if (fs.existsSync(file) === true) {
+  	if (envValue === undefined) {
+	  writter.getWritter()(chalk.red('Please set one environment to use'))
+	  process.exit(1)
+    }
+
+    Bipbip(file, envValue, writter)
+    process.exit(0)
+  }
+}
+
+writter.getWritter()(chalk.red(commander.file.join(' & ') + ' not found'))
+process.exit(1)
