@@ -32,11 +32,11 @@ commander
   .usage('[options] <env>')
   .option('-f, --file <absolute/path/to/config.file.js>', 'Profile file')
   .on('--help', function () {
-	    console.log('  Examples:')
-	    console.log('')
-	    console.log('    $ bipbip dev')
-	    console.log('    $ bipbip -f deploy.js dev')
-	    console.log('')
+      console.log('  Examples:')
+      console.log('')
+      console.log('    $ bipbip dev')
+      console.log('    $ bipbip -f deploy.js dev')
+      console.log('')
   })
   .action(function (env) {
     envValue = env
@@ -45,26 +45,31 @@ commander
 
 if (!commander.file) {
   commander.file = [
-  	process.cwd() + '/deploy.js',
-  	process.cwd() + '/deploy.cjs'
+    process.cwd() + '/deploy.js',
+    process.cwd() + '/deploy.cjs'
   ]
 } else {
   commander.file = [commander.file]
 }
 
+let executing = false
+
 for (let i = 0; i < commander.file.length; i++) {
   const file = commander.file[i]
 
   if (fs.existsSync(file) === true) {
-  	if (envValue === undefined) {
-	  writter.getWritter()(chalk.red('Please set one environment to use'))
-	  process.exit(1)
+    if (envValue === undefined) {
+      writter.getWritter()(chalk.red('Please set one environment to use'))
+      process.exit(1)
     }
 
     Bipbip(file, envValue, writter)
-    process.exit(0)
+    executing = true
+    break
   }
 }
 
-writter.getWritter()(chalk.red(commander.file.join(' & ') + ' not found'))
-process.exit(1)
+if (executing === false) {
+  writter.getWritter()(chalk.red(commander.file.join(' & ') + ' not found'))
+  process.exit(1)
+}
